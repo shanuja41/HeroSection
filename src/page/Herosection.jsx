@@ -22,25 +22,38 @@ export default function Herosection() {
                 {/* Optional overlay */}
                 <div className="overlay"></div>
 
-                {/* Centered Content */}
+              
                 <div
-                  className="container position-absolute top-50 start-50 translate-middle text-start text-white"
-                  style={{ zIndex: 2, padding: "5rem" }}
+                  className="container position-absolute top-50 start-50 translate-middle text-white text-start px-5 px-sm-4 px-md-5 py-4 py-md-5"
+                  style={{ zIndex: 2 }}
                 >
-                  <div className=" maintext text-danger">
-                    <i class="bi bi-star-fill" />{" "}
-                    <span className="fw-bold">TURN OUR CHANGE INTO</span>
+                
+                  <div className="maintext text-danger mb-2">
+                    <i className="bi bi-star-fill me-2 mx-3" />
+                    <span className="fw-bold fs-6 fs-md-5">
+                      TURN OUR CHANGE INTO
+                    </span>
                   </div>
-                  <div className=" main-text fw-bold mb-2">
+
+                
+                  <div className="main-text fw-bold mb-2 fs-md-2 mx-3">
                     {heroSlides[index]?.title}
                   </div>
-                  <p className="mb-2">{heroSlides[index]?.description}</p>
-                  <p className="text-light mb-3">
+
+                
+                  <p className="mb-2 fs-6 fs-md-5 mx-3">
+                    {heroSlides[index]?.description}
+                  </p>
+
+                  
+                  <p className="text-light mb-3 fs-6 mx-3">
                     {heroSlides[index]?.paragraph}
                   </p>
+
+                
                   <Link
                     to={heroSlides[index]?.buttonLink}
-                    className="btn btn-danger px-4 py-2"
+                    className="btn btn-danger px-4 py-2 fs-6 mx-3"
                   >
                     {heroSlides[index]?.buttonText}
                   </Link>
@@ -57,7 +70,7 @@ export default function Herosection() {
           data-bs-target="#heroCarousel"
           data-bs-slide="prev"
         >
-          <i className="bi bi-chevron-left fs-1 px-2 rounded-1 custom-icon-box"></i>
+          <i className="bi bi-chevron-left fs-1 px-2 rounded-1 custom-icon-box d-none d-sm-block "></i>
         </button>
         <button
           className="carousel-control-next"
@@ -65,7 +78,7 @@ export default function Herosection() {
           data-bs-target="#heroCarousel"
           data-bs-slide="next"
         >
-          <i className="bi bi-chevron-right fs-1 px-2 rounded-1 custom-icon-box"></i>
+          <i className="bi bi-chevron-right fs-1 px-2 rounded-1 custom-icon-box d-none d-sm-block "></i>
         </button>
       </div>
 
