@@ -4,6 +4,9 @@ import hero3 from '../assets/images/banner-3.jpg';
 
 export const heroImages = [hero1, hero2, hero3];
 
+
+
+
 export const heroSlides = [
   {
     title: "TURN OUR CHANGE INTO",
@@ -91,6 +94,18 @@ export const cardData = [
     subTitle: "COUNCIL TAX",
     title: "Pay Your Council Tax"
   }
+];
+
+import img11 from '../assets/images/img-1.jpg';
+import img22 from '../assets/images/img-2.jpg';
+import img33 from '../assets/images/img-3.jpg';
+import img44 from '../assets/images/img-4.jpg';
+import img55 from '../assets/images/img-5.jpg';
+
+export const groupedSlides = [
+  [img11, img22],
+  [img33, img44],
+  [img55]        
 ];
 
 

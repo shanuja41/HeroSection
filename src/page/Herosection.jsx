@@ -1,13 +1,28 @@
 import { Link } from "react-router-dom";
+import {  useEffect ,useState } from "react";
 import {
   heroImages,
   heroSlides,
   hero2Images,
   hero2Slides,
   cardData,
+  groupedSlides
 } from "../constant/data";
 
 export default function Herosection() {
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const navMap = [0, 2, 4];
+  const allImages = groupedSlides.flat();
+
+    useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % allImages.length);
+    }, 4000); // 4 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="container-fluid p-0">
       <div id="heroCarousel" className="carousel slide" data-bs-ride="carousel">
@@ -160,6 +175,51 @@ export default function Herosection() {
           </div>
         </div>
       </div>
+      
+      {/* herosection3 */}
+
+   
+      <div className="container-fluid p-0">
+      <div className="position-relative py-4">
+        <div className="carousel slide">
+          <div className="carousel-inner">
+            {allImages.map((img, i) => (
+              <div
+                key={i}
+                className={`carousel-item ${i === currentIndex ? "active" : ""}`}
+              >
+                <img
+                  src={img}
+                  className="d-block w-100"
+                  alt={`Slide ${i + 1}`}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Custom 3-bullet Indicators */}
+        <div className="carousel-indicators mt-3">
+          {navMap.map((imgIndex, navIndex) => (
+            <button
+              key={navIndex}
+              onClick={() => setCurrentIndex(imgIndex)}
+              className={currentIndex === imgIndex ? "active" : ""}
+              style={{
+                width: "12px",
+                height: "12px",
+                borderRadius: "50%",
+                margin: "0 6px",
+                backgroundColor: currentIndex === imgIndex ? "#000" : "#ccc",
+                border: "none"
+              }}
+              aria-label={`Group ${navIndex + 1}`}
+            ></button>
+          ))}
+        </div>
+      </div>
+    </div>
+
     </div>
   );
 }
