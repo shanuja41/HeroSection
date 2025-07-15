@@ -9,6 +9,19 @@
   object-position: center;
 }
 
+.hero-zoom {
+  animation: zoomEffect 5s ease-in-out infinite alternate;
+}
+
+@keyframes zoomEffect {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
 .overlay {
   position: absolute;
   top: 0;
@@ -159,7 +172,7 @@
   font-size: 1rem;
 }
 
-.yellow-button{
+.yellow-button {
   height: 70px;
   width: 190px;
 }
@@ -174,38 +187,39 @@
 
 /* All bullets */
 
-.carousel-indicators{
+.carousel-indicators {
   bottom: 75px !important;
 }
 .carousel-indicators button {
   width: 14px !important;
   height: 14px !important;
   border-radius: 50% !important;
-  border: none !important;                  /* No border */
-  background-color: rgba(244, 233, 169, 0.3) !important; /* Light translucent white */
+  border: none !important; /* No border */
+  background-color: rgba(
+    244,
+    233,
+    169,
+    0.3
+  ) !important; /* Light translucent white */
   opacity: 1 !important;
   padding: 0 !important;
-  margin: 0  !important;                
+  margin: 0 !important;
   box-sizing: border-box !important;
   transition: background-color 0.3s ease;
   display: inline-block !important;
 }
 
 .carousel-indicators .active {
-  background-color: #ffc107 !important;   
+  background-color: #ffc107 !important;
   opacity: 1 !important;
 }
 
 .main-text {
   font-size: 35px !important;
-
 }
 .main-text2 {
   font-size: 35px !important;
-  
 }
-
-
 
 @media (max-width: 768px) {
   .carousel-caption h1 {

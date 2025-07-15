@@ -21,7 +21,7 @@ export default function Herosection() {
                 {/* Background image */}
                 <img
                   src={img}
-                  className="image1 d-block w-100"
+                  className="image1 d-block w-100 hero-zoom"
                   alt={`Slide ${index + 1}`}
                 />
 
