@@ -17,7 +17,7 @@ export default function Herosection() {
               key={index}
               className={`carousel-item ${index === 0 ? "active" : ""}`}
             >
-              <div style={{ position: "relative" }}>
+              <div className="position-relative">
                 {/* Background image */}
                 <img
                   src={img}
