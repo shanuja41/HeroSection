@@ -27,3 +27,48 @@ export const heroSlides = [
     buttonLink: "/about"
   }
 ];
+
+// 2nd Herosection
+import img1 from '../assets/images/img-1.jpg';
+import img2 from '../assets/images/img-2.jpg';
+import img3 from '../assets/images/img-3.jpg';
+import img4 from '../assets/images/img-4.jpg';
+import img5 from '../assets/images/img-5.jpg';
+
+export const hero2Images = [img1, img2, img3, img4, img5];
+
+export const hero2Slides = [
+  {
+    title: "Great Experiences For Building and Reconstruction11",
+    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing industry.",
+    buttonText: "WHAT WE DO",
+    buttonLink: "/about"
+  },
+  {
+    title: "Great Experiences For Building and Reconstruction22",
+    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing industry.",
+    buttonText: "WHAT WE DO",
+    buttonLink: "/about"
+  },
+  {
+    title: "Great Experiences For Building and Reconstruction33",
+    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing industry.",
+    buttonText: "WHAT WE DO",
+    buttonLink: "/about"
+  },
+  {
+    title: "Great Experiences For Building and Reconstruction44",
+    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing industry.",
+    buttonText: "WHAT WE DO",
+    buttonLink: "/about"
+  },
+  {
+    title: "Great Experiences For Building and Reconstruction55",
+    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing industry.",
+    buttonText: "WHAT WE DO",
+    buttonLink: "/about"
+  },
+];
+
+
+

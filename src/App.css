@@ -137,3 +137,87 @@
     transform: rotate(-45deg);
   }
 }
+
+/* herosection2 */
+
+/* Ensure images cover the full viewport */
+.carousel-item img {
+  object-fit: cover;
+  height: 100vh;
+}
+
+/* Overlay effect */
+.carousel-caption.overlay-bg {
+  background-color: rgba(0, 0, 0, 0.5); /* dark overlay */
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.carousel-caption p {
+  max-width: 700px;
+  font-size: 1rem;
+}
+
+.yellow-button{
+  height: 70px;
+  width: 190px;
+}
+
+/* Style carousel indicators as circles */
+.carousel-indicators {
+  bottom: 40px; /* Push above bottom */
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* All bullets */
+
+.carousel-indicators{
+  bottom: 75px !important;
+}
+.carousel-indicators button {
+  width: 14px !important;
+  height: 14px !important;
+  border-radius: 50% !important;
+  border: none !important;                  /* No border */
+  background-color: rgba(244, 233, 169, 0.3) !important; /* Light translucent white */
+  opacity: 1 !important;
+  padding: 0 !important;
+  margin: 0  !important;                 /* Spacing between circles */
+  box-sizing: border-box !important;
+  transition: background-color 0.3s ease;
+  display: inline-block !important;
+}
+
+.carousel-indicators .active {
+  background-color: #ffc107 !important;    /* Solid yellow for active */
+  opacity: 1 !important;
+}
+
+.main-text {
+  font-size: 35px !important;
+
+}
+.main-text2 {
+  font-size: 35px !important;
+  
+}
+
+
+
+@media (max-width: 768px) {
+  .carousel-caption h1 {
+    font-size: 1.5rem;
+  }
+
+  .carousel-caption h2 {
+    font-size: 1.2rem;
+  }
+
+  .carousel-caption p {
+    font-size: 0.9rem;
+    width: 90%;
+  }
+}
