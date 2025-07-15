@@ -10,10 +10,10 @@
 }
 
 .hero-zoom {
-  animation: zoomEffect 5s ease-in-out infinite alternate;
+  animation: zoomInOnce 5s ease-in-out forwards;
 }
 
-@keyframes zoomEffect {
+@keyframes zoomInOnce{
   0% {
     transform: scale(1);
   }
