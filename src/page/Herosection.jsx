@@ -4,7 +4,7 @@ import {
   heroSlides,
   hero2Images,
   hero2Slides,
-  cardData
+  cardData,
 } from "../constant/data";
 
 export default function Herosection() {
@@ -102,7 +102,6 @@ export default function Herosection() {
           ))}
         </div>
       </div>
-
 
       {/* herosection2 */}
       <div className="container-fluid p-0">
