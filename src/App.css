@@ -194,13 +194,13 @@
   width: 14px !important;
   height: 14px !important;
   border-radius: 50% !important;
-  border: none !important; /* No border */
+  border: none !important;
   background-color: rgba(
     244,
     233,
     169,
     0.3
-  ) !important; /* Light translucent white */
+  ) !important; 
   opacity: 1 !important;
   padding: 0 !important;
   margin: 0 !important;
@@ -235,3 +235,35 @@
     width: 90%;
   }
 }
+
+.my-indicators {
+  position: absolute;          /* allows positioning inside carousel */
+  bottom: 70px;                /* distance from bottom of carousel */
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  z-index: 2;                  /* sit on top of image */
+}
+
+.my-indicators button {
+  width: 20px;
+  height: 5px;
+   background-color: rgba(
+    244,
+    233,
+    169,
+    0.3
+  ) !important;
+  border: none;
+  border-radius: 4px;
+  opacity: 0.6;
+  transition: background-color 0.3s;
+}
+
+.my-indicators button.active {
+  background-color: #ffc107 !important;
+  opacity: 1;
+}
+

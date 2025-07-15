@@ -180,45 +180,38 @@ export default function Herosection() {
 
    
       <div className="container-fluid p-0">
-      <div className="position-relative py-4">
-        <div className="carousel slide">
-          <div className="carousel-inner">
-            {allImages.map((img, i) => (
-              <div
-                key={i}
-                className={`carousel-item ${i === currentIndex ? "active" : ""}`}
-              >
-                <img
-                  src={img}
-                  className="d-block w-100"
-                  alt={`Slide ${i + 1}`}
-                />
-              </div>
-            ))}
+  <div className="position-relative py-4"> {/* This will be the relative parent */}
+    <div className="carousel slide">
+      <div className="carousel-inner">
+        {allImages.map((img, i) => (
+          <div
+            key={i}
+            className={`carousel-item ${i === currentIndex ? "active" : ""}`}
+          >
+            <img
+              src={img}
+              className="d-block w-100"
+              alt={`Slide ${i + 1}`}
+            />
           </div>
-        </div>
-
-        {/* Custom 3-bullet Indicators */}
-        <div className="carousel-indicators mt-3">
-          {navMap.map((imgIndex, navIndex) => (
-            <button
-              key={navIndex}
-              onClick={() => setCurrentIndex(imgIndex)}
-              className={currentIndex === imgIndex ? "active" : ""}
-              style={{
-                width: "12px",
-                height: "12px",
-                borderRadius: "50%",
-                margin: "0 6px",
-                backgroundColor: currentIndex === imgIndex ? "#000" : "#ccc",
-                border: "none"
-              }}
-              aria-label={`Group ${navIndex + 1}`}
-            ></button>
-          ))}
-        </div>
+        ))}
       </div>
     </div>
+
+    {/* Custom Indicators Positioned Absolutely */}
+    <div className="my-indicators">
+      {navMap.map((imgIndex, navIndex) => (
+        <button
+          key={navIndex}
+          onClick={() => setCurrentIndex(imgIndex)}
+          className={currentIndex === imgIndex ? "active" : ""}
+          aria-label={`Group ${navIndex + 1}`}
+        ></button>
+      ))}
+    </div>
+  </div>
+</div>
+
 
     </div>
   );
