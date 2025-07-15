@@ -70,5 +70,29 @@ export const hero2Slides = [
   },
 ];
 
+export const cardData = [
+  {
+    icon: "bi-truck",
+    subTitle: "SCHEDULE",
+    title: "Garbage & Recycling"
+  },
+  {
+    icon: "bi-p-circle",
+    subTitle: "IN EFFECT",
+    title: "Alternate Side Parking"
+  },
+  {
+    icon: "bi-buildings",
+    subTitle: "SCHOOL",
+    title: "All Schools are Open"
+  },
+  {
+    icon: "bi-cash-coin",
+    subTitle: "COUNCIL TAX",
+    title: "Pay Your Council Tax"
+  }
+];
+
+
 
 

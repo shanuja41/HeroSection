@@ -185,14 +185,14 @@
   background-color: rgba(244, 233, 169, 0.3) !important; /* Light translucent white */
   opacity: 1 !important;
   padding: 0 !important;
-  margin: 0  !important;                 /* Spacing between circles */
+  margin: 0  !important;                
   box-sizing: border-box !important;
   transition: background-color 0.3s ease;
   display: inline-block !important;
 }
 
 .carousel-indicators .active {
-  background-color: #ffc107 !important;    /* Solid yellow for active */
+  background-color: #ffc107 !important;   
   opacity: 1 !important;
 }
 

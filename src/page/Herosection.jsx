@@ -4,6 +4,7 @@ import {
   heroSlides,
   hero2Images,
   hero2Slides,
+  cardData
 } from "../constant/data";
 
 export default function Herosection() {
@@ -81,70 +82,29 @@ export default function Herosection() {
         </button>
       </div>
 
-      <div className="cardsqure py-4 px-3 rounded-2 bg-white position-relative ">
+      <div className="cardsqure py-4 px-3 rounded-2 bg-white position-relative">
         <div className="row g-3">
-          <div className="col-lg-3 col-md-6 col-sm-12">
-            <div className="yellow-box position-relative">
-              <div className="icon-box-wrapper">
-                <div className="icon-back"></div>
-                <div className="icon-box">
-                  <div className="icon-inner">
-                    <i className="bi bi-truck fs-2 text-danger"></i>
+          {cardData.map((card, index) => (
+            <div key={index} className="col-lg-3 col-md-6 col-sm-12">
+              <div className="yellow-box position-relative">
+                <div className="icon-box-wrapper">
+                  <div className="icon-back"></div>
+                  <div className="icon-box">
+                    <div className="icon-inner">
+                      <i className={`bi ${card.icon} fs-2 text-danger`}></i>
+                    </div>
                   </div>
                 </div>
+                <h6 className="text-muted">{card.subTitle}</h6>
+                <h5>{card.title}</h5>
               </div>
-              <h6 className="text-muted">SCHEDULE</h6>
-              <h5>Garbage & Recycling</h5>
             </div>
-          </div>
-
-          <div className="col-lg-3 col-md-6 col-sm-12">
-            <div className="yellow-box position-relative">
-              <div className="icon-box-wrapper">
-                <div className="icon-back"></div>
-                <div className="icon-box">
-                  <div className="icon-inner">
-                    <i className="bi bi-p-circle fs-2 text-danger"></i>
-                  </div>
-                </div>
-              </div>
-              <h6 className="text-muted">IN EFFECT </h6>
-              <h5>Alternate Side Parking</h5>
-            </div>
-          </div>
-
-          <div className="col-lg-3 col-md-6 col-sm-12">
-            <div className="yellow-box position-relative">
-              <div className="icon-box-wrapper">
-                <div className="icon-back"></div>
-                <div className="icon-box">
-                  <div className="icon-inner">
-                    <i className="bi bi-buildings fs-2 text-danger"></i>
-                  </div>
-                </div>
-              </div>
-              <h6 className="text-muted">SCHOOL</h6>
-              <h5>All Schools are Open</h5>
-            </div>
-          </div>
-
-          <div className="col-lg-3 col-md-6 col-sm-12">
-            <div className="yellow-box position-relative">
-              <div className="icon-box-wrapper">
-                <div className="icon-back"></div>
-                <div className="icon-box">
-                  <div className="icon-inner">
-                    <i className="bi bi-cash-coin fs-2 text-danger"></i>
-                  </div>
-                </div>
-              </div>
-              <h6 className="text-muted">COUNCIL TAX</h6>
-              <h5>Pay Your Council Tax</h5>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
 
+
+      {/* herosection2 */}
       <div className="container-fluid p-0">
         <div
           id="heroCarousel2"
@@ -152,7 +112,7 @@ export default function Herosection() {
           data-bs-ride="carousel"
         >
           {/* Carousel Indicators */}
-          <div className="carousel-indicators">
+          <div className="carousel-indicators ">
             {hero2Images.map((_, index) => (
               <button
                 key={index}
