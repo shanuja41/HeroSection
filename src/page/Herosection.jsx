@@ -7,6 +7,8 @@ import {
   hero2Slides,
   cardData,
   groupedSlides,
+  hero5Images,
+  hero5Slides,
 } from "../constant/data";
 
 export default function Herosection() {
@@ -295,10 +297,93 @@ export default function Herosection() {
 
       {/* herosection 5 */}
 
-      
+      <div className="container-fluid p-0">
+        <div
+          id="carouselHero5"
+          className="carousel slide"
+          data-bs-ride="carousel"
+          data-bs-interval="5000"
+        >
+          <div className="carousel-indicators">
+            {hero5Images.map((_, index) => (
+              <button
+                key={index}
+                type="button"
+                data-bs-target="#carouselHero5"
+                data-bs-slide-to={index}
+                className={index === 0 ? "active" : ""}
+                aria-current={index === 0 ? "true" : undefined}
+                aria-label={`Slide ${index + 1}`}
+              ></button>
+            ))}
+          </div>
 
+          <div className="carousel-inner overlay-bg ">
+            {hero5Images.map((img, index) => (
+              <div
+                key={index}
+                className={`carousel-item ${index === 0 ? "active" : ""}`}
+                style={{ height: "100vh" }}
+              >
+                <img
+                  src={img}
+                  className="d-block w-100 h-100 object-fit-cover"
+                  alt={`Slide ${index + 1}`}
+                />
+                <span className="overlay" style={{ zIndex: 0 }}></span>
 
+                <div
+                  className={`carousel-caption carousel-caption5 d-flex flex-column justify-content-center h-100  ${
+                    index === 0
+                      ? "align-items-start text-start ps-3 ps-md-5"
+                      : index === 1
+                      ? "align-items-center text-center"
+                      : "align-items-end text-end pe-3 pe-md-5 "
+                  }`}
+                >
+                  <span className="main-text5 text-danger fs-1 fw-bold mb-1">
+                    {hero5Slides[index].title.split("For")[0]}
+                  </span>
+                  <span className="main-text55 text-danger fs-1 fw-bold mb-3">{`For${
+                    hero5Slides[index].title.split("For")[1]
+                  }`}</span>
+                  <p className="text-white  mb-4 w-75">
+                    {hero5Slides[index].description}
+                  </p>
+                  <Link
+                    to={hero5Slides[index].buttonLink}
+                    className="yellow-button btn btn-danger rounded-1 text-white fw-bold px-4 py-4"
+                  >
+                    {hero5Slides[index].buttonText}
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
 
+          {/* Prev button (left) */}
+          <button
+            className="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselHero5"
+            data-bs-slide="prev"
+          >
+            <i className="bi bi-chevron-left fs-1"></i>
+            <span className="visually-hidden">Previous</span>
+          </button>
+
+          {/* Next button (right) */}
+          <button
+            className="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselHero5"
+            data-bs-slide="next"
+          >
+            <i className="bi bi-chevron-right fs-1"></i>
+            <span className="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
     </div>
   );
 }
