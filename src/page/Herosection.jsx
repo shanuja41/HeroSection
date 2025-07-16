@@ -1,21 +1,20 @@
 import { Link } from "react-router-dom";
-import {  useEffect ,useState } from "react";
+import { useEffect, useState } from "react";
 import {
   heroImages,
   heroSlides,
   hero2Images,
   hero2Slides,
   cardData,
-  groupedSlides
+  groupedSlides,
 } from "../constant/data";
 
 export default function Herosection() {
-
   const [currentIndex, setCurrentIndex] = useState(0);
   const navMap = [0, 2, 4];
   const allImages = groupedSlides.flat();
 
-    useEffect(() => {
+  useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % allImages.length);
     }, 4000); // 4 seconds
@@ -126,7 +125,7 @@ export default function Herosection() {
           data-bs-ride="carousel"
         >
           {/* Carousel Indicators */}
-          <div className="carousel-indicators ">
+          <div className="carousel-indicators carousel-custom ">
             {hero2Images.map((_, index) => (
               <button
                 key={index}
@@ -175,20 +174,22 @@ export default function Herosection() {
           </div>
         </div>
       </div>
-      
+
       {/* herosection3 */}
 
-   
       <div className="container-fluid p-0">
-        <div className="position-relative py-4"> {/* This will be the relative parent */}
+        <div className="position-relative py-4">
+          {/* This will be the relative parent */}
           <div className="carousel slide">
             <div className="carousel-inner">
               {allImages.map((img, i) => (
                 <div
                   key={i}
-                  className={`carousel-item ${i === currentIndex ? "active" : ""}`}
+                  className={`carousel-item ${
+                    i === currentIndex ? "active" : ""
+                  }`}
                 >
-                 <div className="carousel-img-wrapper position-relative">
+                  <div className="carousel-img-wrapper position-relative">
                     <img
                       src={img}
                       className="d-block w-100"
@@ -200,7 +201,6 @@ export default function Herosection() {
               ))}
             </div>
           </div>
-
           {/* Custom Indicators Positioned Absolutely */}
           <div className="my-indicators">
             {navMap.map((imgIndex, navIndex) => (
@@ -213,9 +213,85 @@ export default function Herosection() {
             ))}
           </div>
         </div>
-</div>
+      </div>
 
+      {/* hero section4 */}
+      <div className="container-fluid p-0">
+        <div
+          id="carouselExampleIndicators"
+          className="carousel slide"
+          data-bs-ride="carousel"
+          data-bs-interval="5000"
+        >
+          <div className="carousel-indicators">
+            {hero2Images.map((_, index) => (
+              <button
+                key={index}
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to={index}
+                className={index === 0 ? "active" : ""}
+                aria-current={index === 0 ? "true" : undefined}
+                aria-label={`Slide ${index + 1}`}
+              ></button>
+            ))}
+          </div>
 
+          <div className="carousel-inner">
+            {hero2Images.map((img, index) => (
+              <div
+                key={index}
+                className={`carousel-item ${index === 0 ? "active" : ""}`}
+                style={{ height: "100vh" }}
+              >
+                <img
+                  src={img}
+                  className="d-block w-100 h-100 object-fit-cover"
+                  alt={`Slide ${index + 1}`}
+                />
+                <div className="carousel-caption d-flex flex-column justify-content-center align-items-center text-center h-100 overlay-bg px-2">
+                  <span className="main-text text-warning fw-bold mb-1">
+                    {hero2Slides[index].title.split("For")[0]}
+                  </span>
+                  <span className="main-text2 text-warning fw-bold mb-3">{`For${
+                    hero2Slides[index].title.split("For")[1]
+                  }`}</span>
+                  <p className="text-white mx-auto mb-4 w-75">
+                    {hero2Slides[index].description}
+                  </p>
+                  <Link
+                    to={hero2Slides[index].buttonLink}
+                    className="yellow-button btn btn-warning rounded-1 text-white fw-bold px-4 py-4"
+                  >
+                    {hero2Slides[index].buttonText}
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+          {/* Prev button (left) */}
+          <button
+            className="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev"
+          >
+            <i className="bi bi-chevron-left fs-1"></i>
+            <span className="visually-hidden">Previous</span>
+          </button>
+
+          {/* Next button (right) */}
+          <button
+            className="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next"
+          >
+            <i className="bi bi-chevron-right fs-1"></i>
+            <span className="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
     </div>
   );
 }
