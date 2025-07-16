@@ -139,5 +139,33 @@ export const hero5Slides = [
 ];
 
 
+import img61 from '../assets/images/banner-1.jpg';
+import img62 from '../assets/images/banner-2.jpg';
+
+
+export const hero6Images = [img61, img62,null];
+
+export const hero6Slides = [
+  {
+    title: "Great Experiences For Building and Reconstruction11",
+    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing industry.",
+    buttonText: "WHAT WE DO",
+    buttonLink: "/about"
+  },
+  {
+    title: "Great Experiences For Building and Reconstruction22",
+    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing industry.",
+    buttonText: "WHAT WE DO",
+    buttonLink: "/about"
+  },
+  {
+    title: "Great Experiences For Building and Reconstruction33",
+    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing industry.",
+    buttonText: "WATCH MORE",
+    buttonLink: "/about"
+  },
+];
+
+
 
 

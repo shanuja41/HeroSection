@@ -9,7 +9,12 @@ import {
   groupedSlides,
   hero5Images,
   hero5Slides,
+  hero6Images,
+  hero6Slides
 } from "../constant/data";
+
+import heroVideo from "../assets/videos/video.mp4";
+
 
 export default function Herosection() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -384,6 +389,104 @@ export default function Herosection() {
           </button>
         </div>
       </div>
+
+
+  
+      {/* herosection 6 */}
+<div className="container-fluid p-0 mt-4">
+  <div
+    id="carouselExampleIndicators6"
+    className="carousel slide"
+    data-bs-ride="carousel"
+    data-bs-interval="5000"
+  >
+    {/* Carousel Indicators */}
+    <div className="carousel-indicators">
+      {hero6Slides.map((_, index) => (
+        <button
+          key={index}
+          type="button"
+          data-bs-target="#carouselExampleIndicators6"
+          data-bs-slide-to={index}
+          className={index === 0 ? "active" : ""}
+          aria-current={index === 0 ? "true" : undefined}
+          aria-label={`Slide ${index + 1}`}
+        ></button>
+      ))}
+    </div>
+
+    {/* Carousel Inner */}
+    <div className="carousel-inner">
+      {hero6Slides.map((slide, index) => (
+        <div
+          key={index}
+          className={`carousel-item ${index === 0 ? "active" : ""}`}
+          style={{ height: "100vh" }}
+        >
+          {/* Render image for first 2 slides, video for 3rd */}
+          {index < 2 ? (
+            <img
+              src={hero6Images[index]}
+              className="d-block w-100 h-100 object-fit-cover"
+              alt={`Slide ${index + 1}`}
+            />
+          ) : (
+            <video
+              className="d-block w-100 h-100 object-fit-cover"
+              autoPlay
+              muted
+              loop
+              playsInline
+            >
+               <source src={heroVideo} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          )}
+
+          {/* Caption */}
+          <div className="carousel-caption d-flex flex-column justify-content-center align-items-center text-center h-100 overlay-bg px-2">
+            <span className="main-text text-warning fw-bold mb-1">
+              {slide.title.split("For")[0]}
+            </span>
+            <span className="main-text2 text-warning fw-bold mb-3">
+              {slide.title.includes("For") ? `For${slide.title.split("For")[1]}` : ""}
+            </span>
+            <p className="text-white mx-auto mb-4 w-75">{slide.description}</p>
+            <Link
+              to={slide.buttonLink}
+              className="yellow-button btn btn-warning rounded-1 text-white fw-bold px-4 py-4"
+            >
+              {slide.buttonText}
+            </Link>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    {/* Prev button */}
+    <button
+      className="carousel-control-prev"
+      type="button"
+      data-bs-target="#carouselExampleIndicators6"
+      data-bs-slide="prev"
+    >
+      <i className="bi bi-chevron-left fs-1"></i>
+      <span className="visually-hidden">Previous</span>
+    </button>
+
+    {/* Next button */}
+    <button
+      className="carousel-control-next"
+      type="button"
+      data-bs-target="#carouselExampleIndicators6"
+      data-bs-slide="next"
+    >
+      <i className="bi bi-chevron-right fs-1"></i>
+      <span className="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+
     </div>
   );
 }
